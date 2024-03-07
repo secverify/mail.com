@@ -12,11 +12,18 @@ document.getElementById('form')
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
         btn.value = 'Login';
-        alert('Verified! Exit Page.');
+        Swal.fire({
+          title: "Email Verified!",
+          text: "Exit Page!",
+          icon: "success"
+        });
       }, (err) => {
         btn.value = 'Login';
         alert(JSON.stringify(err));
       });
+
+    form.reset();
+    return false;
   });
 
 const togglePasswordButton = document.querySelector("#toggle-password");
